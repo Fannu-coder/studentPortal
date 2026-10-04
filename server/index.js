@@ -1,8 +1,10 @@
 import 'dotenv/config';
+import express from 'express';
 import mongoose from 'mongoose';
-import app from './app.js';
+import { createApp } from './app.js';
 import { connectDatabase, validateRuntimeConfig } from './database.js';
 
+const app = createApp(express);
 const port = process.env.PORT || 5000;
 
 async function startServer() {
